@@ -49,6 +49,9 @@
             } else {
                 // Sinon, cacher le menu burger
                 $('#burger-wrapper').fadeOut();
+                if($('#burger-menu').is(':visible')) {
+                    $('#burger-icon').click();
+                }
             }
         });
 
