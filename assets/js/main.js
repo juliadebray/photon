@@ -46,6 +46,8 @@
             if (windowTopPosition > headerBottomPosition) {
                 // Si la section "header" n'est pas visible, afficher le menu burger
                 $('#burger-wrapper').fadeIn();
+                    $('#burger-icon').css('display','block');
+
             } else {
                 // Sinon, cacher le menu burger
                 $('#burger-wrapper').fadeOut();
@@ -58,12 +60,15 @@
         $('#burger-icon').on("click", function(){
             if($('#burger-menu').css('display') === 'none'){
                 $('#burger-menu').css('display', 'block');
+                $('#burger-icon').css('background-color','#6bd4c8');
                 $('#burger-wrapper').css('width', '15rem');
                 $('#burger-wrapper').css('background-color', '#333');
             } else {
                 $('#burger-menu').css('display','none');
                 $('#burger-wrapper').css('width', '5rem');
                 $('#burger-wrapper').css('background-color', 'transparent');
+                $('#burger-icon').css('background-color','black');
+
             }
         });
 
