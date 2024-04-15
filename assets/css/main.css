@@ -269,12 +269,8 @@ input, select, textarea {
         margin:0%;
     }
 
-    #burger-menu > a {
-        width: 100%;
-    }
-
     #burger-menu > li {
-        padding: 1rem
+        padding: 1rem;
     }
 
 /* Ajouter des styles supplémentaires au besoin */

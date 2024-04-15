@@ -64,6 +64,18 @@
             }
         });
 
+        $(document).mouseup(function(e) {
+            const aside = $("#burger-wrapper");
+            const menuAside = $("#burger-menu");
+            const burgerButton = $('#burger-icon');
+            if (aside.css('background-color') !== 'transparent' && menuAside.is(":visible")) {
+            // Si la cible du clic n'est pas l'aside et n'est pas un descendant de l'aside, alors on ferme l'aside
+                if (!aside.is(e.target) && aside.has(e.target).length === 0) {
+                    burgerButton.click();
+                }
+            }
+        });
+
 
 });
 
