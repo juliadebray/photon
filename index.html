@@ -20,12 +20,14 @@
 					<span class="icon solid major fa-om"></span>
 					<h1><strong>Massage Bien-Être</strong></h1>
 					<p>Valentin Debray</p>
-					<ul class="actions special">
-						<li><a href="#who_am_i" class="button scrolly">Qui suis-je ?</a></li>
-                        <li><a href="#cabinet" class="button scrolly">Le Cabinet</a></li>
-                        <li><a href="#massages" class="button scrolly">Mes massages</a></li>
-                        <li><a href="#contact" class="button scrolly">Contact / réservation</a></li>
-					</ul>
+                    <menu>
+                        <ul class="actions special">
+                            <li><a href="#who_am_i" class="button scrolly">Qui suis-je ?</a></li>
+                            <li><a href="#cabinet" class="button scrolly">Le Cabinet</a></li>
+                            <li><a href="#massages" class="button scrolly">Mes massages</a></li>
+                            <li><a href="#contact" class="button scrolly">Contact</a></li>
+                        </ul>
+                    </menu>
 				</div>
 			</section>
 
@@ -97,7 +99,13 @@
 							<p>Adipiscing a commodo ante nunc magna lorem et interdum mi ante nunc lobortis non amet vis sed volutpat et nascetur.</p>
 							<p>tarif : 50 euro</p>
 							<ul class="actions special">
-								<li><a href="#" class="button">Réserver</a></li>
+                                <li>
+                                    <!-- Début de widget de lien Calendly -->
+                                    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+                                    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+                                    <a class="button" href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/myletters-trash'});return false;">Réserver</a>
+                                    <!-- Fin de widget de lien Calendly -->
+                                </li>
 							</ul>
 						</div>
 						<div class="col-4 col-12-medium">
@@ -106,17 +114,31 @@
 							<p>Adipiscing a commodo ante nunc magna lorem et interdum mi ante nunc lobortis non amet vis sed volutpat et nascetur.</p>
 							<p>tarif : 50 euro</p>
                             <ul class="actions special">
-								<li><a href="#" class="button">Réserver</a></li>
-							</ul>
+                                <li>
+                                    <!-- Début de widget de lien Calendly -->
+                                    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+                                    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+                                    <a class="button" href=""
+                                        onclick="Calendly.initPopupWidget({url: 'https://calendly.com/myletters-trash'});return false;">Réserver</a>
+                                    <!-- Fin de widget de lien Calendly -->
+                                </li>
+                            </ul>
 						</div>
 						<div class="col-4 col-12-medium">
 							<span class="image fit"><img src="images/pic04.jpg" alt="" /></span>
 							<h3>Magna feugiat lorem</h3>
 							<p>Adipiscing a commodo ante nunc magna lorem et interdum mi ante nunc lobortis non amet vis sed volutpat et nascetur.</p>
 							<p>tarif : 50 euro</p>
-							<ul class="actions special">
-								<li><a href="#" class="button">Réserver</a></li>
-							</ul>
+                            <ul class="actions special">
+                                <li>
+                                    <!-- Début de widget de lien Calendly -->
+                                    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+                                    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+                                    <a class="button" href=""
+                                        onclick="Calendly.initPopupWidget({url: 'https://calendly.com/myletters-trash'});return false;">Réserver</a>
+                                    <!-- Fin de widget de lien Calendly -->
+                                </li>
+                            </ul>
 						</div>
 					</div>
 				</div>
@@ -131,26 +153,26 @@
                     <form method="post" action="https://formspree.io/f/xleqoovp">
                         <div class="row gtr-uniform gtr-50">
                             <div class="col-6 col-12-xsmall">
-                                <input type="text" name="name" id="name" placeholder="Nom" required />
+                                <input type="text" name="name" id="name" placeholder="Nom *" required />
                             </div>
                             <div class="col-6 col-12-xsmall">
                                 <input type="text" name="prenom" id="firstname" placeholder="Prénom" />
                             </div>
                             <div class="col-6 col-12-xsmall">
-                                <input type="email" name="email" id="email" placeholder="Email" required />
+                                <input type="email" name="email" id="email" placeholder="Email *" required />
                             </div>
                             <div class="col-6 col-12-xsmall">
                                 <input type="tel" name="telephone" id="firstname" placeholder="Téléphone" />
                             </div>
                             <div class="col-12">
-                                <textarea name="message" id="message" placeholder="Ecrivez votre message" required rows="6"></textarea>
+                                <textarea name="message" id="message" placeholder="Ecrivez votre message *" required rows="6"></textarea>
                             </div>
                             <!-- replace with your recaptcha SITE key not secret key -->
                             <div class="g-recaptcha" data-sitekey="Last"></div>
                             <div class="col-12">
                                 <ul class="actions">
-                                    <li><input type="submit" value="Send Message" class="primary" /></li>
-                                    <li><input type="reset" value="Reset" /></li>
+                                    <li><input type="submit" value="Envoyer" class="primary" /></li>
+                                    <li><input type="reset" value="Annuler" /></li>
                                 </ul>
                             </div>
                         </div>
