@@ -6,7 +6,7 @@
 
 (function($) {
 
-	var	$window = $(window),
+	let	$window = $(window),
 		$body = $('body');
 
 	// Breakpoints.
@@ -28,5 +28,43 @@
 
 	// Scrolly.
 		$('.scrolly').scrolly();
+
+    $(document).ready(function() {
+        $(window).scroll(function() {
+            // Récupérer la position du haut de la fenêtre et la hauteur de la fenêtre
+            let windowTopPosition = $(window).scrollTop();
+            let windowHeight = $(window).height();
+
+            // Récupérer la position de la section "header"
+            let headerPosition = $('#header').offset().top;
+            let headerHeight = $('#header').outerHeight();
+
+            // Calculer la position du bas de la section "header"
+            let headerBottomPosition = headerPosition + headerHeight;
+
+            // Vérifier si la section "header" est visible à l'écran
+            if (windowTopPosition > headerBottomPosition) {
+                // Si la section "header" n'est pas visible, afficher le menu burger
+                $('#burger-wrapper').fadeIn();
+            } else {
+                // Sinon, cacher le menu burger
+                $('#burger-wrapper').fadeOut();
+            }
+        });
+
+        $('#burger-icon').on("click", function(){
+            if($('#burger-menu').css('display') === 'none'){
+                $('#burger-menu').css('display', 'block');
+                $('#burger-wrapper').css('width', '15rem');
+                $('#burger-wrapper').css('background-color', '#333');
+            } else {
+                $('#burger-menu').css('display','none');
+                $('#burger-wrapper').css('width', '5rem');
+                $('#burger-wrapper').css('background-color', 'transparent');
+            }
+        });
+
+
+});
 
 })(jQuery);
