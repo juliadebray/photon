@@ -33,7 +33,6 @@
         $(window).scroll(function() {
             // Récupérer la position du haut de la fenêtre et la hauteur de la fenêtre
             let windowTopPosition = $(window).scrollTop();
-            let windowHeight = $(window).height();
 
             // Récupérer la position de la section "header"
             let headerPosition = $('#header').offset().top;
@@ -46,7 +45,7 @@
             if (windowTopPosition > headerBottomPosition) {
                 // Si la section "header" n'est pas visible, afficher le menu burger
                 $('#burger-wrapper').fadeIn();
-                    $('#burger-icon').css('display','block');
+                    $('#burger-icon').css('opacity','1');
                     $('#burger-icon').css('pointer-events','auto');
 
             } else {
@@ -61,7 +60,6 @@
 
         $('#burger-icon').on("click", function(){
             if($('#burger-menu').css('opacity') === '0'){
-                $('#burger-icon').css('background-color','#6bd4c8');
                 $('#burger-wrapper').css('background-color', '#333');
                 $('#burger-wrapper').css('pointer-events','auto');
                 setTimeout(function() {
@@ -69,7 +67,6 @@
                 }, 200);
             } else {
                 $('#burger-wrapper').css('background-color', 'transparent');
-                $('#burger-icon').css('background-color','black');
                 $('#burger-wrapper').css('pointer-events','none');
                 $('#burger-menu').css('opacity','0');
             }
