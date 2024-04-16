@@ -27,7 +27,7 @@
 		});
 
 	// Scrolly.
-		$('.scrolly').scrolly();
+    $('.scrolly').scrolly();
 
     $(document).ready(function() {
         $(window).scroll(function() {
@@ -47,39 +47,40 @@
                 // Si la section "header" n'est pas visible, afficher le menu burger
                 $('#burger-wrapper').fadeIn();
                     $('#burger-icon').css('display','block');
+                    $('#burger-icon').css('pointer-events','auto');
 
             } else {
                 // Sinon, cacher le menu burger
                 $('#burger-wrapper').fadeOut();
-                if($('#burger-menu').is(':visible')) {
+                if($('#burger-menu').css('opacity') === '1') {
                     $('#burger-icon').click();
+                    $('#burger-icon').css('pointer-events','none');
                 }
             }
         });
 
         $('#burger-icon').on("click", function(){
-            if($('#burger-menu').css('display') === 'none'){
-                $('#burger-menu').css('display', 'block');
+            if($('#burger-menu').css('opacity') === '0'){
                 $('#burger-icon').css('background-color','#6bd4c8');
-                $('#burger-wrapper').css('width', '15rem');
                 $('#burger-wrapper').css('background-color', '#333');
+                $('#burger-wrapper').css('pointer-events','auto');
+                setTimeout(function() {
+                    $('#burger-menu').css('opacity', '1');
+                }, 200);
             } else {
-                $('#burger-menu').css('display','none');
-                $('#burger-wrapper').css('width', '5rem');
                 $('#burger-wrapper').css('background-color', 'transparent');
                 $('#burger-icon').css('background-color','black');
-
+                $('#burger-wrapper').css('pointer-events','none');
+                $('#burger-menu').css('opacity','0');
             }
         });
 
         $(document).mouseup(function(e) {
             const aside = $("#burger-wrapper");
-            const menuAside = $("#burger-menu");
-            const burgerButton = $('#burger-icon');
-            if (aside.css('background-color') !== 'transparent' && menuAside.is(":visible")) {
+            if (aside.css('background-color') !== 'transparent' && $("#burger-menu").css("opacity") === "1") {
             // Si la cible du clic n'est pas l'aside et n'est pas un descendant de l'aside, alors on ferme l'aside
                 if (!aside.is(e.target) && aside.has(e.target).length === 0) {
-                    burgerButton.click();
+                    $('#burger-icon').click();
                 }
             }
         });
