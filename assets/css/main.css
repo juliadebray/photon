@@ -255,6 +255,11 @@ input, select, textarea {
         pointer-events: none;
     }
 
+    .coucou {
+        padding: 0.5 rem;
+        margin: 1rem;
+    }
+
     .burger-button {
         background-color: black;
         padding: 1rem;
@@ -3486,7 +3491,7 @@ input, select, textarea {
 			input[type="reset"],
 			input[type="button"],
 			.button {
-				padding: 0;
+				padding: 0 1.5em 0 1.5em;
 			}
 
 		/* Main */
