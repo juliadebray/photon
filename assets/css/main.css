@@ -3561,3 +3561,8 @@ input, select, textarea {
 			}
 
 	}
+
+    [id*="menu_"] {
+        color: #fff !important;
+        width: 100% !important;
+    }
