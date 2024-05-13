@@ -239,6 +239,15 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            window.onbeforeunload = () => {
+                for (const form of document.getElementsByTagName('form')) {
+                    form.reset();
+                }
+            }
+        });
+    </script>
 
 </body>
 
